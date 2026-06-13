@@ -307,10 +307,7 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.4s var(--ease), transform 0.4s var(--ease);
 }
 .card:hover { background: var(--paper); }
-.card__num {
-  font-family: var(--serif); font-size: 0.9rem; color: var(--gold); letter-spacing: 0.1em;
-  display: block; margin-bottom: 22px;
-}
+.card__num { display: none; }
 .card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.35rem; margin-bottom: 14px; line-height: 1.2; }
 .card p { color: var(--muted); font-size: 0.96rem; }
 
