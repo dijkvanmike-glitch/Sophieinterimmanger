@@ -1,0 +1,17 @@
+FOTO VAN SOPHIE TOEVOEGEN
+=========================
+
+De website verwacht een foto op deze plek:
+
+    assets/sophie.jpg
+
+Stappen:
+1. Sla de professionele foto van Sophie op als "sophie.jpg"
+2. Plaats het bestand in deze map (assets/)
+3. Klaar — de foto verschijnt automatisch in de "Over Sophie" sectie.
+
+Tip: gebruik een liggende of staande foto van goede kwaliteit
+(minimaal 800 x 1000 pixels). Een vierkante of staande foto werkt
+het mooist, omdat het vak op de site een verhouding van 4:5 heeft.
+
+Zolang er geen foto staat, toont de site netjes een nette placeholder.
