@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veiligheid, Toezicht & Handhaving — Interim Management</title>
+  <meta name="description" content="Interim management in het domein veiligheid, toezicht en handhaving. Sturing op openbare orde, BOA-teams en gemeentelijke handhavingsorganisaties." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --clr-bg: #0d1117;
+      --clr-surface: #161b22;
+      --clr-accent: #c8a84b;
+      --clr-accent2: #1e4d8c;
+      --clr-text: #e6edf3;
+      --clr-muted: #8b949e;
+      --clr-border: #30363d;
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --max-w: 1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav__brand {
+      display: flex; align-items: center; gap: .75rem;
+      text-decoration: none; color: var(--clr-text);
+    }
+    .nav__badge {
+      background: var(--clr-accent2);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .25rem .6rem;
+      border-radius: 4px;
+    }
+    .nav__title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 500; }
+    .nav__links { display: flex; gap: 2rem; list-style: none; }
+    .nav__links a { text-decoration: none; color: var(--clr-muted); font-size: .9rem; transition: color .2s; }
+    .nav__links a:hover { color: var(--clr-text); }
+    .nav__cta {
+      background: var(--clr-accent);
+      color: #0d1117 !important;
+      padding: .45rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: .85rem !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(30,77,140,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 70%, rgba(200,168,75,.06) 0%, transparent 60%);
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+    }
+    .hero__eyebrow {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.25rem;
+    }
+    .hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .hero__title em { font-style: italic; color: var(--clr-accent); }
+    .hero__lede { color: var(--clr-muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 520px; }
+    .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center;
+      padding: .75rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: all .2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn--primary { background: var(--clr-accent); color: #0d1117; }
+    .btn--primary:hover { background: #d4b55a; }
+    .btn--ghost { background: transparent; color: var(--clr-text); border: 1.5px solid var(--clr-border); }
+    .btn--ghost:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
+
+    .hero__image {
+      position: relative;
+    }
+    .hero__img-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+    }
+    .hero__img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero__img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1rem;
+      color: var(--clr-muted);
+    }
+    .hero__img-placeholder svg { opacity: .3; }
+    .hero__img-caption {
+      position: absolute;
+      bottom: -1.25rem; left: 1.5rem;
+      background: var(--clr-accent2);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 600;
+      padding: .5rem 1rem;
+      border-radius: 6px;
+      letter-spacing: .04em;
+    }
+
+    /* STATS */
+    .stats { padding: 3rem 0; border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border); }
+    .stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
+    .stat__num { display: block; font-family: var(--font-serif); font-size: 2.4rem; font-weight: 500; color: var(--clr-accent); }
+    .stat__label { font-size: .85rem; color: var(--clr-muted); }
+
+    /* SECTION HEADERS */
+    .section__eyebrow {
+      font-size: .75rem; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--clr-accent);
+      margin-bottom: .75rem;
+    }
+    .section__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .section__head { text-align: center; margin-bottom: 3rem; }
+    .section__head p { color: var(--clr-muted); max-width: 560px; margin: 0 auto; }
+
+    /* EXPERTISE CARDS */
+    .cards__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      transition: border-color .2s;
+    }
+    .card:hover { border-color: var(--clr-accent); }
+    .card__icon {
+      width: 40px; height: 40px;
+      background: rgba(30,77,140,.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    .card h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 500; margin-bottom: .6rem; }
+    .card p { color: var(--clr-muted); font-size: .9rem; }
+
+    /* APPROACH */
+    .approach__grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .approach__intro p { color: var(--clr-muted); margin-top: 1rem; }
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step__num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: var(--clr-accent2);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .85rem;
+      margin-top: .2rem;
+    }
+    .step h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; margin-bottom: .4rem; }
+    .step p { color: var(--clr-muted); font-size: .9rem; }
+
+    /* DOMAINS */
+    .domains {
+      background: var(--clr-surface);
+      border-top: 1px solid var(--clr-border);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .domains__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .domain-tag {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+    .domain-tag span { font-size: 1.2rem; }
+
+    /* CONTACT */
+    .contact__inner {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .contact__lede { color: var(--clr-muted); margin: 1rem 0 2.5rem; font-size: 1.05rem; }
+    .contact__methods {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .contact__item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--clr-text);
+      transition: border-color .2s;
+    }
+    .contact__item:hover { border-color: var(--clr-accent); }
+    .contact__label { font-size: .8rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: .08em; }
+    .contact__value { font-weight: 500; }
+
+    /* FOOTER */
+    .footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--clr-border);
+      text-align: center;
+      color: var(--clr-muted);
+      font-size: .85rem;
+    }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 768px) {
+      .hero__grid { grid-template-columns: 1fr; }
+      .hero__image { order: -1; }
+      .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .cards__grid { grid-template-columns: 1fr; }
+      .approach__grid { grid-template-columns: 1fr; }
+      .domains__grid { grid-template-columns: 1fr; }
+      .nav__links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="#hero" class="nav__brand">
+        <span class="nav__badge">VTH</span>
+        <span class="nav__title">Veiligheid · Toezicht · Handhaving</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#aanpak">Aanpak</a></li>
+        <li><a href="#domein">Domein</a></li>
+        <li><a href="#contact" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Interim Management · Veiligheid · Toezicht · Handhaving</p>
+        <h1 class="hero__title reveal">
+          Grip op veiligheid.<br /><em>Gezag dat werkt.</em>
+        </h1>
+        <p class="hero__lede reveal">
+          Tijdelijk leiderschap voor gemeentelijke handhavingsorganisaties, omgevingsdiensten
+          en BOA-teams. Van het stroomlijnen van processen tot het opbouwen van een stevige veiligheidscultuur.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#contact" class="btn btn--primary">Plan een kennismaking</a>
+          <a href="#expertise" class="btn btn--ghost">Bekijk expertise</a>
+        </div>
+      </div>
+      <div class="hero__image reveal">
+        <div class="hero__img-wrap">
+          <img id="heroImg" src="assets/boa.jpg" alt="BOA in dienst"
+            onerror="this.parentNode.innerHTML='<div class=\'hero__img-placeholder\'><svg width=\'64\' height=\'64\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><path d=\'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\'/></svg><span style=\'font-size:.85rem\'>Afbeelding volgt</span></div>'" />
+        </div>
+        <div class="hero__img-caption">BOA · Buitengewoon Opsporingsambtenaar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat reveal">
+        <span class="stat__num">15+</span>
+        <span class="stat__label">jaar leiderschapservaring</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num">350+</span>
+        <span class="stat__label">medewerkers aangestuurd</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num">36</span>
+        <span class="stat__label">sitemanagers offshore</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num">100%</span>
+        <span class="stat__label">resultaatgericht</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="section" id="expertise">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Expertise</p>
+        <h2 class="section__title">Waar ik het verschil maak</h2>
+        <p>Interim management binnen het VTH-domein vraagt om een combinatie van operationele slagkracht, juridische kennis en menselijk leiderschap.</p>
+      </div>
+      <div class="cards__grid">
+        <article class="card reveal">
+          <div class="card__icon">🛡️</div>
+          <h3>Handhavingsorganisatie</h3>
+          <p>Opbouwen, versterken of reorganiseren van BOA-teams en handhavingsdiensten. Heldere structuur, bevoegdheden en aansturing.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">👁️</div>
+          <h3>Toezicht & Inspectie</h3>
+          <p>Stroomlijnen van toezichtsprocessen, risicogestuurd werken en het vertalen van beleid naar uitvoering op straat.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">⚖️</div>
+          <h3>Juridische Basis</h3>
+          <p>Master Arbeidsrecht als basis. Diepgaand begrip van bevoegdheden, procedures en de rechtsstatelijke kaders waarbinnen handhaving plaatsvindt.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">🏗️</div>
+          <h3>Omgevingsdienst & WABO</h3>
+          <p>Sturing op vergunningverlening, toezicht en handhaving (VTH) in het fysieke domein. Aansluiting op omgevingsvisie en omgevingsplan.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">🤝</div>
+          <h3>Ketenregie</h3>
+          <p>Samenwerking met politie, OM, brandweer en gemeentelijke afdelingen organiseren. Eén gezicht, één aanpak.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">📋</div>
+          <h3>Veiligheidscultuur</h3>
+          <p>Aantoonbare ervaring met het neerzetten van een veiligheidscultuur in complexe operationele omgevingen — ook offshore.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AANPAK -->
+  <section class="section" id="aanpak" style="background: var(--clr-surface); border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border);">
+    <div class="container approach__grid">
+      <div class="approach__intro reveal">
+        <p class="section__eyebrow">Aanpak</p>
+        <h2 class="section__title">Snel inzetbaar. Direct effectief.</h2>
+        <p>In het VTH-domein is er geen tijd voor lange inwerkperiodes. Ik leer snel, stel direct de juiste vragen en lever resultaat.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__num">1</span>
+          <div>
+            <h3>Situatieanalyse</h3>
+            <p>Inzicht in de organisatie, de opgave en wat er écht speelt — bij medewerkers, management en bestuur.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">2</span>
+          <div>
+            <h3>Prioriteiten stellen</h3>
+            <p>Wat is urgent, wat is belangrijk en wat kan wachten? Een scherp beeld, gecommuniceerd zonder omwegen.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">3</span>
+          <div>
+            <h3>Uitvoeren met het team</h3>
+            <p>Handen uit de mouwen. Samen met de mensen op de werkvloer — niet erboven.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">4</span>
+          <div>
+            <h3>Borgen & overdragen</h3>
+            <p>Resultaten die beklijven. Een organisatie die het zelf verder kan als ik vertrek.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOMEIN -->
+  <section class="section domains" id="domein">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Inzetbaar bij</p>
+        <h2 class="section__title">Organisaties in het VTH-domein</h2>
+        <p>Ik ben beschikbaar voor interim-opdrachten bij publieke en semi-publieke organisaties die werken aan veiligheid, toezicht en handhaving.</p>
+      </div>
+      <div class="domains__grid">
+        <div class="domain-tag reveal"><span>🏛️</span> Gemeenten & stedelijke handhaving</div>
+        <div class="domain-tag reveal"><span>🌿</span> Omgevingsdiensten (WABO/Omgevingswet)</div>
+        <div class="domain-tag reveal"><span>🚨</span> BOA-organisaties (domein I t/m VI)</div>
+        <div class="domain-tag reveal"><span>🏭</span> Veiligheidsregio's & brandweer</div>
+        <div class="domain-tag reveal"><span>🌊</span> Offshore & industriële veiligheid</div>
+        <div class="domain-tag reveal"><span>📐</span> Toezicht in het fysieke domein</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container contact__inner">
+      <p class="section__eyebrow reveal">Contact</p>
+      <h2 class="section__title reveal">Laten we kennismaken</h2>
+      <p class="contact__lede reveal">
+        Op zoek naar interim leiderschap in het VTH-domein? Neem gerust contact op voor een vrijblijvend gesprek.
+      </p>
+      <div class="contact__methods reveal">
+        <a href="mailto:info@example.nl" class="contact__item">
+          <span class="contact__label">E-mail</span>
+          <span class="contact__value">info@example.nl</span>
+        </a>
+        <a href="tel:+310000000000" class="contact__item">
+          <span class="contact__label">Telefoon</span>
+          <span class="contact__value">+31 6 — — — — —</span>
+        </a>
+        <a href="#" class="contact__item">
+          <span class="contact__label">LinkedIn</span>
+          <span class="contact__value">linkedin.com/in/—</span>
+        </a>
+      </div>
+      <a href="mailto:info@example.nl" class="btn btn--primary reveal">Stuur een bericht</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>Veiligheid · Toezicht · Handhaving — Interim Management</span>
+      &nbsp;·&nbsp;
+      <span>Noord-Holland</span>
+      &nbsp;·&nbsp;
+      <span>© <span id="year"></span></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
