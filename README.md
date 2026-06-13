@@ -2,24 +2,36 @@
 
 Premium website voor het interim-managementbedrijf van Sophie Broers.
 
+## 🌐 Live website (deel deze link)
+
+**https://dijkvanmike-glitch.github.io/Sophieinterimmanger**
+
+Deze link is permanent en werkt voor iedereen, op elk apparaat. Pas je iets
+aan en publiceer je opnieuw, dan zien bezoekers automatisch de nieuwste versie
+via dezelfde link.
+
 ## Wat zit erin
 
 - `index.html` — de complete website (één pagina)
 - `css/styles.css` — het premium design
 - `js/script.js` — animaties en interactie
-- `assets/` — plek voor de foto van Sophie (zie `assets/LEESMIJ.txt`)
+- `assets/` — foto van Sophie (`assets/sophie.jpg`)
+- `.github/workflows/deploy.yml` — publiceert de site automatisch naar GitHub Pages
 
-## Website bekijken
+## Hoe wordt de site gepubliceerd
 
-Open `index.html` in je browser — dubbelklik op het bestand. Dat is alles.
+Elke wijziging die op de `main`-branch wordt gezet, wordt automatisch live
+gezet via GitHub Pages (zie de workflow in `.github/workflows/`).
 
-## Foto toevoegen
+## Website lokaal bekijken
 
-Plaats een foto van Sophie als `assets/sophie.jpg`. Zie `assets/LEESMIJ.txt`
-voor details. Zonder foto toont de site automatisch een nette placeholder.
+Open `index.html` in je browser — dubbelklik op het bestand.
 
-## Online zetten (later)
+## Foto vervangen
 
-De site bestaat alleen uit "statische" bestanden en kan gratis online via
-bijvoorbeeld GitHub Pages, Netlify of Vercel. Vraag gerust om hulp wanneer
-je zover bent.
+Plaats een nieuwe foto van Sophie als `assets/sophie.jpg` (verhouding ±4:5,
+minimaal 800×1000 px voor scherpe weergave).
+
+## Eigen webnaam (later)
+
+De site kan later gekoppeld worden aan een eigen domein zoals `sophiebroers.nl`.
