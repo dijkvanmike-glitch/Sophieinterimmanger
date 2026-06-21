@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schildersbedrijf F.E. Fokkema | Meesterschilder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --navy:#1b2a3b; --navy2:#243447; --accent:#b8611f; --accent2:#c9722d; --cream:#f9f7f4; --white:#ffffff; --text:#1e293b; --muted:#64748b; --border:#e2ddd8; --r:12px; --r-lg:22px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 5%; box-shadow: 0 1px 16px rgba(0,0,0,0.06); }
+    .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: -0.3px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { list-style: none; display: flex; gap: 2.2rem; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta { background: var(--accent) !important; color: var(--white) !important; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600 !important; transition: background 0.25s !important; }
+    .nav-cta:hover { background: var(--accent2) !important; }
+    .hero { min-height: 100vh; padding-top: 74px; display: grid; grid-template-columns: 1fr 1fr; }
+    .hero-left { background: var(--navy); display: flex; flex-direction: column; padding: 0 6% 0 8%; }
+    .hero-left-content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 4rem 0 2rem; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--accent); font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; }
+    .hero-eyebrow::before { content: ''; width: 26px; height: 2px; background: var(--accent); }
+    .hero h1 { font-size: clamp(2.2rem, 3.2vw, 3.4rem); color: var(--white); line-height: 1.18; margin-bottom: 1.4rem; }
+    .hero h1 em { color: var(--accent); font-style: italic; }
+    .hero-sub { color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.9; margin-bottom: 2.8rem; max-width: 430px; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-main { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: var(--white); padding: 0.95rem 2rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 20px rgba(184,97,31,0.4); }
+    .btn-main:hover { background: var(--accent2); transform: translateY(-2px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1.5px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.82); padding: 0.95rem 2rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.08); margin: 0 -6% 0 -8%; }
+    .hero-stat { padding: 1.6rem 2rem; border-right: 1px solid rgba(255,255,255,0.07); }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--white); }
+    .hero-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.38); margin-top: 0.15rem; }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--navy) 0%, rgba(27,42,59,0.2) 40%, transparent 65%); }
+    .trust-strip { background: var(--navy2); padding: 1.8rem 5%; display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .trust-item { display: flex; align-items: center; gap: 0.7rem; color: rgba(255,255,255,0.62); font-size: 0.87rem; font-weight: 500; }
+    .trust-item i { color: var(--accent); font-size: 1.1rem; }
+    .section-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--accent); font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    .section-eyebrow::before { content: ''; width: 22px; height: 2px; background: var(--accent); }
+    .section-title { font-size: clamp(1.8rem, 2.8vw, 2.6rem); color: var(--navy); line-height: 1.22; margin-bottom: 0.9rem; }
+    .section-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.8; max-width: 500px; margin-bottom: 3.5rem; }
+    .diensten { padding: 7rem 5%; background: var(--cream); }
+    .diensten-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+    .dienst-card { background: var(--white); border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); transition: all 0.3s; }
+    .dienst-card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.1); border-color: transparent; }
+    .dienst-img { height: 220px; overflow: hidden; }
+    .dienst-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .dienst-card:hover .dienst-img img { transform: scale(1.05); }
+    .dienst-body { padding: 1.8rem 1.8rem 2rem; }
+    .dienst-icon { width: 44px; height: 44px; background: rgba(184,97,31,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem; }
+    .dienst-body h3 { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+    .dienst-body p { color: var(--muted); font-size: 0.88rem; line-height: 1.78; }
+    .over { padding: 7rem 5%; background: var(--white); }
+    .over-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 6rem; align-items: center; }
+    .over-img-wrap { position: relative; }
+    .over-img-wrap img { width: 100%; height: 540px; object-fit: cover; object-position: center top; border-radius: var(--r-lg); display: block; }
+    .meester-badge { position: absolute; top: 2.5rem; left: -1.8rem; background: var(--accent); color: var(--white); padding: 1.2rem 1.5rem; border-radius: var(--r); text-align: center; box-shadow: 0 12px 40px rgba(184,97,31,0.45); }
+    .meester-badge i { font-size: 1.7rem; margin-bottom: 0.35rem; display: block; }
+    .meester-badge p { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; line-height: 1.45; }
+    .over-exp-badge { position: absolute; bottom: 2.5rem; right: -1.8rem; background: var(--navy); color: var(--white); padding: 1.5rem 2rem; border-radius: var(--r); box-shadow: 0 12px 40px rgba(0,0,0,0.22); text-align: center; }
+    .over-exp-badge h4 { font-size: 2.4rem; font-weight: 800; color: var(--white); font-family: 'Playfair Display', serif; }
+    .over-exp-badge p { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; }
+    .over-content .section-sub { margin-bottom: 0; }
+    .over-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; margin: 2rem 0 2.8rem; }
+    .over-list li { display: flex; align-items: flex-start; gap: 0.85rem; font-size: 0.94rem; line-height: 1.65; color: var(--muted); }
+    .over-list li i { color: var(--accent); margin-top: 3px; flex-shrink: 0; }
+    .over-list li strong { color: var(--text); }
+    .werkwijze { padding: 7rem 5%; background: var(--navy); }
+    .werkwijze .section-title { color: var(--white); }
+    .werkwijze .section-sub { color: rgba(255,255,255,0.42); }
+    .stappen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 1rem; position: relative; }
+    .stappen::before { content: ''; position: absolute; top: 36px; left: calc(16.67% + 1rem); right: calc(16.67% + 1rem); height: 1px; background: linear-gradient(to right, var(--accent), rgba(184,97,31,0.1)); }
+    .stap { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--r-lg); padding: 2.8rem 2.2rem; text-align: center; transition: border-color 0.3s; }
+    .stap:hover { border-color: rgba(184,97,31,0.35); }
+    .stap-nr { width: 56px; height: 56px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; color: var(--white); margin: 0 auto 1.8rem; font-family: 'Playfair Display', serif; position: relative; z-index: 1; box-shadow: 0 0 0 10px rgba(184,97,31,0.1); }
+    .stap h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .stap p { color: rgba(255,255,255,0.42); font-size: 0.88rem; line-height: 1.82; }
+    .reviews { padding: 7rem 5%; background: var(--white); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+    .review-card { background: var(--cream); border-radius: var(--r-lg); padding: 2.2rem; border: 1px solid var(--border); }
+    .review-quote { font-size: 4.5rem; color: var(--accent); opacity: 0.18; line-height: 0.65; font-family: Georgia, serif; margin-bottom: 1rem; }
+    .stars { color: #f59e0b; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
+    .review-text { color: var(--muted); font-size: 0.92rem; line-height: 1.88; font-style: italic; margin-bottom: 1.8rem; }
+    .reviewer { display: flex; align-items: center; gap: 0.85rem; }
+    .reviewer-av { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #7a3b0f); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.88rem; }
+    .reviewer-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+    .reviewer-role { font-size: 0.78rem; color: var(--muted); }
+    .contact { padding: 7rem 5%; background: var(--navy); }
+    .contact .section-title { color: var(--white); }
+    .contact .section-sub { color: rgba(255,255,255,0.42); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+    .c-items { display: flex; flex-direction: column; gap: 1.6rem; }
+    .c-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .c-icon { width: 48px; height: 48px; background: rgba(255,255,255,0.07); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+    .c-label { font-size: 0.74rem; font-weight: 600; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.2rem; }
+    .c-value { color: rgba(255,255,255,0.85); font-size: 0.95rem; font-weight: 500; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .f-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .f-group label { font-size: 0.78rem; color: rgba(255,255,255,0.42); font-weight: 500; }
+    .f-group input, .f-group textarea, .f-group select { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.9rem 1rem; color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: border 0.25s; }
+    .f-group select option { background: var(--navy2); }
+    .f-group input::placeholder, .f-group textarea::placeholder { color: rgba(255,255,255,0.22); }
+    .f-group input:focus, .f-group textarea:focus, .f-group select:focus { border-color: var(--accent); }
+    .f-group textarea { resize: vertical; min-height: 130px; }
+    footer { background: #0d1820; padding: 2.2rem 5%; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 1rem; }
+    .f-logo { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--white); font-size: 1.05rem; }
+    .f-logo span { color: var(--accent); }
+    footer p { color: rgba(255,255,255,0.25); font-size: 0.82rem; }
+    .wa-float { position: fixed; bottom: 2rem; right: 2rem; width: 58px; height: 58px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.65rem; text-decoration: none; z�index: 999; box-shadow: 0 4px 22px rgba(37,211,102,0.5); transition: transform 0.25s; }
+    .wa-float:hover { transform: scale(1.1); }
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 45vh; }
+      .hero-right::after { background: linear-gradient(to bottom, var(--navy) 0%, transparent 40%); }
+      .hero-stats { margin: 0; }
+      .diensten-grid { grid-template-columns: 1fr; }
+      .over-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .meester-badge { left: 1rem; }
+      .over-exp-badge { right: 1rem; }
+      .stappen { grid-template-columns: 1fr; }
+      .stappen::before { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .f-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .trust-strip { gap: 1.5rem; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">F.E. Fokkema <span>Schilder</span></a>
+  <ul class="nav-links">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#over">Over ons</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Offerte aanvragen</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-left-content">
+      <p class="hero-eyebrow">Meesterschilder met 5 ★ op Google</p>
+      <h1>Vakmanschap dat je <em>ziet &amp; voelt</em></h1>
+      <p class="hero-sub">Van historische panden tot moderne woningen. Wij leveren schilderwerk van topkwaliteit — met zorg voor uw woning en trots op ons ambacht.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-main"><i class="fa-solid fa-file-invoice"></i> Gratis offerte aanvragen</a>
+        <a href="tel:+31652405929" class="btn-ghost"><i class="fa-solid fa-phone"></i> 06 52405929</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Jaar ervaring</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Projecten gedaan</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">5★</div><div class="hero-stat-label">Google beoordeling</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260619_054101_612918df-31be-4c29-addd-41832af878c4.png" alt="Meesterschilder aan het werk" />
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-item"><i class="fa-solid fa-award"></i> Erkend Meesterschilder</div>
+  <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> 5 jaar garantie op het werk</div>
+  <div class="trust-item"><i class="fa-solid fa-leaf"></i> Milieuvriendelijke verven</div>
+  <div class="trust-item"><i class="fa-solid fa-clock"></i> Altijd op tijd opgeleverd</div>
+</div>
+
+<section class="diensten" id="diensten">
+  <p class="section-eyebrow">Wat wij doen</p>
+  <h2 class="section-title">Onze diensten</h2>
+  <p class="section-sub">Of het nu gaat om uw woning, bedrijfspand of een monumentaal gebouw — wij leveren altijd vakkundig en duurzaam schilderwerk.</p>
+  <div class="diensten-grid">
+    <div class="dienst-card">
+      <div class="dienst-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260619_054442_a4bbdedc-33c7-4592-8803-39227703bb4d.png" alt="Binnenschilderwerk" /></div>
+      <div class="dienst-body">
+        <div class="dienst-icon"><i class="fa-solid fa-house"></i></div>
+        <h3>Woningen</h3>
+        <p>Binnen- en buitenschilderwerk voor uw thuis. Van kozijnen en gevels tot slaapkamers en woonkamers — strak afgewerkt met oog voor detail.</p>
+      </div>
+    </div>
+    <div class="dienst-card">
+      <div class="dienst-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260619_054142_fd5a6dcf-e272-4ef3-b526-d986de8d51b8.png" alt="Gevels en buitenwerk" /></div>
+      <div class="dienst-body">
+        <div class="dienst-icon"><i class="fa-solid fa-building"></i></div>
+        <h3>Gevels &amp; Buitenwerk</h3>
+        <p>Bescherming én uitstraling voor uw gevel. Wij schilderen kozijnen, dakranden en gevels vakkundig en duurzaam — klaar voor jaren.</p>
+      </div>
+    </div>
+    <div class="dienst-card">
+      <div class="dienst-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260619_054703_4e8e4c77-3028-4276-b223-7bd5adcfafe4.png" alt="Renovatie en restauratie" /></div>
+      <div class="dienst-body">
+        <div class="dienst-icon"><i class="fa-solid fa-landmark"></i></div>
+        <h3>Renovatie &amp; Restauratie</h3>
+        <p>Bijzondere panden vragen om bijzondere aandacht. Wij hebben ruime ervaring met monumenten en historische bebouwing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="over" id="over">
+  <div class="over-grid">
+    <div class="over-img-wrap">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260619_054142_fd5a6dcf-e272-4ef3-b526-d986de8d51b8.png" alt="Vakkundig schilderwerk Fokkema" />
+      <div class="meester-badge"><i class="fa-solid fa-award"></i><p>Erkend<br>Meester&shy;schilder</p></div>
+      <div class="over-exp-badge"><h4>20+</h4><p>jaar vakmanschap</p></div>
+    </div>
+    <div class="over-content">
+      <p class="section-eyebrow">Over ons</p>
+      <h2 class="section-title">Waarom kiezen voor<br>Schildersbedrijf F.E. Fokkema?</h2>
+      <p class="section-sub">Wij zijn geen groot anoniem schildersbedrijf. Bij ons weet u wie er bij u binnenstapt: vakmannen met trots op hun ambacht en respect voor uw woning.</p>
+      <ul class="over-list">
+        <li><i class="fa-solid fa-circle-check"></i><span><strong>Erkend vakman</strong> — gecertificeerd meesterschilder met jarenlange ervaring</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span><strong>Eerlijk geprijsd</strong> — heldere offerte zonder verborgen kosten of verrassingen achteraf</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span><strong>Hoogwaardige materialen</strong> — wij werken uitsluitend met duurzame, milieuvriendelijke verfproducten</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span><strong>Netjes en op tijd</strong> — geordend werken, alles schoon achterlaten en uw planning respecteren</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span><strong>5 jaar garantie</strong> — wij staan achter ons werk en lossen eventuele klachten altijd op</span></li>
+      </ul>
+      <a href="#contact" class="btn-main" style="align-self:flex-start; border:none; cursor:pointer;">Maak kennis met ons <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="werkwijze" id="werkwijze">
+  <p class="section-eyebrow">Hoe wij werken</p>
+  <h2 class="section-title">Van eerste contact tot strak resultaat</h2>
+  <p class="section-sub">Geen gedoe, geen verrassingen. Duidelijke afspraken en vakkundig werk van begin tot eind.</p>
+  <div class="stappen">
+    <div class="stap"><div class="stap-nr">1</div><h3>Gratis kennismaking</h3><p>Wij komen langs, bekijken de situatie ter plekke en luisteren naar uw wensen. Vrijblijvend en zonder verplichtingen.</p></div>
+    <div class="stap"><div class="stap-nr">2</div><h3>Heldere offerte</h3><p>U ontvangt een gespecificeerde offerte met eerlijke prijzen — geen kleine lettertjes, geen verborgen kosten.</p></div>
+    <div class="stap"><div class="stap-nr">3</div><h3>Vakkundig uitgevoerd</h3><p>Wij werken netjes, punctueel en zorgvuldig. Na afloop laten wij alles schoon achter. U hoeft er niet naar om te kijken.</p></div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <p class="section-eyebrow">Wat klanten zeggen</p>
+  <h2 class="section-title">Beoordelingen</h2>
+  <p class="section-sub">14 tevreden klanten gingen u voor op Google.</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-quote">&ldquo;</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Onze gevel ziet er prachtig uit. Alles netjes gedaan, duidelijke communicatie vooraf en achteraf alles schoongemaakt. Absoluut aan te raden!</p>
+      <div class="reviewer"><div class="reviewer-av">HV</div><div><div class="reviewer-name">Hans van der Berg</div><div class="reviewer-role">Particulier</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote">&ldquo;</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Alle kozijnen buiten vernieuwd en geschilderd. Spoedklus goed opgepakt, op tijd klaar en keurig vakwerk. Zal hen zeker opnieuw inschakelen.</p>
+      <div class="reviewer"><div class="reviewer-av">ML</div><div><div class="reviewer-name">Marieke L.</div><div class="reviewer-role">VvE-beheerder</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote">&ldquo;</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Volledig binnenschilderwerk in onze nieuwe woning — strak, snel en eerlijk geprijsd. Echte vakmannen die weten wat ze doen. Top!</p>
+      <div class="reviewer"><div class="reviewer-av">RK</div><div><div class="reviewer-name">Roel K.</div><div class="reviewer-role">Particulier</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="section-eyebrow">Neem contact op</p>
+  <h2 class="section-title">Vraag een gratis offerte aan</h2>
+  <p class="section-sub">Vul het formulier in en we nemen binnen één werkdag contact met u op. Vrijblijvend en kosteloos.</p>
+  <div class="contact-grid">
+    <div class="c-items">
+      <div class="c-item">
+        <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+        <div><div class="c-label">Telefoon</div><div class="c-value">06 52405929</div></div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div><div class="c-label">WhatsApp</div><div class="c-value">Direct bereikbaar via WhatsApp</div></div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon"><i class="fa-solid fa-file-invoice"></i></div>
+        <div><div class="c-label">Offerte</div><div class="c-value">Altijd gratis en vrijblijvend</div></div>
+      </div>
+    </div>
+    <form class="contact-form">
+      <div class="f-row">
+        <div class="f-group"><label>Naam</label><input type="text" placeholder="Uw naam" /></div>
+        <div class="f-group"><label>Telefoonnummer</label><input type="tel" placeholder="+31 6 ..." /></div>
+      </div>
+      <div class="f-group"><label>E-mailadres</label><input type="email" placeholder="uw@email.nl" /></div>
+      <div class="f-group">
+        <label>Soort werk</label>
+        <select>
+          <option>Binnenschilderwerk</option>
+          <option>Buitenschilderwerk / Gevel</option>
+          <option>Kozijnen schilderen</option>
+          <option>Renovatie / Restauratie</option>
+          <option>Behangen</option>
+          <option>Anders / combinatie</option>
+        </select>
+      </div>
+      <div class="f-group"><label>Omschrijving (optioneel)</label><textarea placeholder="Vertel kort wat er gedaan moet worden..."></textarea></div>
+      <button type="submit" class="btn-main" style="border:none; cursor:pointer; width:fit-content;">
+        <i class="fa-solid fa-paper-plane"></i> Verstuur aanvraag
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">F.E. Fokkema <span>Schilder</span></div>
+  <p>&copy; 2026 Schildersbedrijf F.E. Fokkema &mdash; Alle rechten voorbehouden</p>
+</footer>
+
+<a href="https://wa.me/31652405929" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
