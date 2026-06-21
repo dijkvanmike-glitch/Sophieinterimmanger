@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:unsplash.com)",
+      "Skill(higgsfield-generate)",
+      "Skill(higgsfield-generate:*)",
+      "Bash(higgsfield generate *)",
+      "Bash(higgsfield marketing-studio *)",
+      "Bash(higgsfield upload *)",
+      "mcp__claude_ai_Higgsfield__job_status",
+      "mcp__claude_ai_Higgsfield__generate_image",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\dijkv\\\\Desktop\\\\Mikebedrijf\\\\Website\\\\Schildersbedrijf\\\\template.html\")",
+      "PowerShell(gh --version)",
+      "PowerShell(Start-Process \"https://app.netlify.com/drop\")",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\dijkv\\\\Desktop\\\\Mikebedrijf\\\\Klanten\\\\Per_Klant\\\\Schildersbedrijf_Heerschop_Kampen\\\\website\\\\index.html\")",
+      "PowerShell(Import-Csv -Path \"C:\\\\Users\\\\dijkv\\\\Desktop\\\\Mikebedrijf\\\\Klanten\\\\Leads_zonder_website.xlsx\" -ErrorAction SilentlyContinue)"
+    ]
+  }
+}
