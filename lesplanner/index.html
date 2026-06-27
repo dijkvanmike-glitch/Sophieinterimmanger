@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesplanner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <h1 class="topbar__logo">Lesplanner</h1>
+      <nav class="topbar__nav">
+        <button class="view-btn active" data-view="week">Week</button>
+        <button class="view-btn" data-view="dag">Dag</button>
+        <button class="view-btn" data-view="taken">Taken</button>
+      </nav>
+      <button class="btn btn--primary" id="addLesBtn">+ Les toevoegen</button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Week view -->
+    <section class="view" id="view-week">
+      <div class="week-nav">
+        <button class="icon-btn" id="prevWeek">&#8592;</button>
+        <span class="week-label" id="weekLabel"></span>
+        <button class="icon-btn" id="nextWeek">&#8594;</button>
+      </div>
+      <div class="week-grid" id="weekGrid"></div>
+    </section>
+
+    <!-- Dag view -->
+    <section class="view hidden" id="view-dag">
+      <div class="week-nav">
+        <button class="icon-btn" id="prevDag">&#8592;</button>
+        <span class="week-label" id="dagLabel"></span>
+        <button class="icon-btn" id="nextDag">&#8594;</button>
+      </div>
+      <div class="dag-list" id="dagList"></div>
+    </section>
+
+    <!-- Taken view -->
+    <section class="view hidden" id="view-taken">
+      <div class="taken-header">
+        <h2>Taken &amp; Deadlines</h2>
+        <button class="btn btn--primary" id="addTaakBtn">+ Taak toevoegen</button>
+      </div>
+      <div class="taken-list" id="takenList"></div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Les toevoegen/bewerken -->
+  <div class="modal-overlay hidden" id="lesModal">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 id="modalTitle">Les toevoegen</h2>
+        <button class="close-btn" id="closeLesModal">&times;</button>
+      </div>
+      <form id="lesForm">
+        <label>Vaknaam
+          <input type="text" id="lesVak" placeholder="Bijv. Wiskunde" required />
+        </label>
+        <label>Datum
+          <input type="date" id="lesDatum" required />
+        </label>
+        <label>Starttijd
+          <input type="time" id="lesStart" required />
+        </label>
+        <label>Eindtijd
+          <input type="time" id="lesEind" required />
+        </label>
+        <label>Lokaal
+          <input type="text" id="lesLokaal" placeholder="Bijv. A101" />
+        </label>
+        <label>Notitie
+          <textarea id="lesNotitie" placeholder="Optionele aantekening..."></textarea>
+        </label>
+        <div class="modal__actions">
+          <button type="button" class="btn btn--ghost" id="deleteLesBtn" style="display:none">Verwijderen</button>
+          <button type="submit" class="btn btn--primary">Opslaan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Taak toevoegen/bewerken -->
+  <div class="modal-overlay hidden" id="taakModal">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 id="taakModalTitle">Taak toevoegen</h2>
+        <button class="close-btn" id="closeTaakModal">&times;</button>
+      </div>
+      <form id="taakForm">
+        <label>Taaknaam
+          <input type="text" id="taakNaam" placeholder="Bijv. Toets nakijken" required />
+        </label>
+        <label>Deadline
+          <input type="date" id="taakDeadline" required />
+        </label>
+        <label>Prioriteit
+          <select id="taakPrioriteit">
+            <option value="laag">Laag</option>
+            <option value="middel" selected>Middel</option>
+            <option value="hoog">Hoog</option>
+          </select>
+        </label>
+        <label>Notitie
+          <textarea id="taakNotitie" placeholder="Optionele details..."></textarea>
+        </label>
+        <div class="modal__actions">
+          <button type="button" class="btn btn--ghost" id="deleteTaakBtn" style="display:none">Verwijderen</button>
+          <button type="submit" class="btn btn--primary">Opslaan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
