@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesplanner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOGIN SCHERM -->
+  <div id="scherm-login" class="scherm">
+    <div class="login-box">
+      <div class="login-logo">📋 Lesplanner</div>
+      <h1 class="login-titel">Welkom terug</h1>
+      <p class="login-sub">Log in om verder te gaan</p>
+      <div class="demo-accounts">
+        <p class="demo-label">Demo accounts — klik om in te loggen:</p>
+        <div class="demo-knoppen">
+          <button class="demo-btn" onclick="demoLogin('eigenaar')">👑 Eigenaar</button>
+          <button class="demo-btn" onclick="demoLogin('cursist1')">🎓 Lisa (cursist)</button>
+          <button class="demo-btn" onclick="demoLogin('cursist2')">🎓 Tom (cursist)</button>
+          <button class="demo-btn" onclick="demoLogin('cursist3')">🎓 Emma (cursist)</button>
+        </div>
+      </div>
+      <div class="scheidslijn"><span>of log in met e-mail</span></div>
+      <form onsubmit="inloggen(event)">
+        <label>E-mailadres<input type="email" id="login-email" placeholder="naam@email.nl" /></label>
+        <label>Wachtwoord<input type="password" id="login-ww" placeholder="••••••••" /></label>
+        <button type="submit" class="btn btn--primary btn--vol">Inloggen</button>
+      </form>
+      <p class="register-link">Nog geen account? <a href="#" onclick="toonScherm('scherm-registreer')">Registreer hier</a></p>
+    </div>
+  </div>
+
+  <!-- REGISTREER SCHERM -->
+  <div id="scherm-registreer" class="scherm verborgen">
+    <div class="login-box">
+      <div class="login-logo">📋 Lesplanner</div>
+      <h1 class="login-titel">Account aanmaken</h1>
+      <form onsubmit="registreren(event)">
+        <label>Volledige naam<input type="text" id="reg-naam" placeholder="Jan Jansen" required /></label>
+        <label>E-mailadres<input type="email" id="reg-email" placeholder="naam@email.nl" required /></label>
+        <label>Wachtwoord<input type="password" id="reg-ww" placeholder="Minimaal 6 tekens" required /></label>
+        <button type="submit" class="btn btn--primary btn--vol">Account aanmaken</button>
+      </form>
+      <p class="register-link"><a href="#" onclick="toonScherm('scherm-login')">← Terug naar inloggen</a></p>
+    </div>
+  </div>
+
+  <!-- EIGENAAR APP -->
+  <div id="scherm-eigenaar" class="scherm verborgen">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <span class="topbar__logo">📋 Lesplanner</span>
+        <nav class="topbar__nav">
+          <button class="nav-tab active" onclick="eigenaarTab('overzicht', this)">Overzicht</button>
+          <button class="nav-tab" onclick="eigenaarTab('lessen', this)">Lessen</button>
+          <button class="nav-tab" onclick="eigenaarTab('cursisten', this)">Cursisten</button>
+          <button class="nav-tab" onclick="eigenaarTab('reacties', this)">Reacties <span id="reactie-badge" class="badge verborgen"></span></button>
+        </nav>
+        <button class="btn btn--ghost btn--sm" onclick="uitloggen()">Uitloggen</button>
+      </div>
+    </header>
+    <main class="main">
+
+      <!-- OVERZICHT -->
+      <div id="e-overzicht" class="tab-inhoud">
+        <div class="pagina-header">
+          <h2>Goedemorgen, <span id="eigenaar-naam"></span> 👋</h2>
+          <p class="sub">Hier is het overzicht van vandaag</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-kaart">
+            <div class="stat-getal" id="stat-lessen">0</div>
+            <div class="stat-label">Lessen vandaag</div>
+          </div>
+          <div class="stat-kaart">
+            <div class="stat-getal" id="stat-afmeldingen">0</div>
+            <div class="stat-label">Afmeldingen</div>
+          </div>
+          <div class="stat-kaart">
+            <div class="stat-getal" id="stat-reacties">0</div>
+            <div class="stat-label">Open reacties</div>
+          </div>
+          <div class="stat-kaart">
+            <div class="stat-getal" id="stat-cursisten">0</div>
+            <div class="stat-label">Cursisten totaal</div>
+          </div>
+        </div>
+        <h3 class="sectie-titel">Vrijgekomen lessen</h3>
+        <div id="vrijgekomen-lessen"></div>
+      </div>
+
+      <!-- LESSEN -->
+      <div id="e-lessen" class="tab-inhoud verborgen">
+        <div class="pagina-header">
+          <h2>Lessen beheren</h2>
+          <button class="btn btn--primary" onclick="openLesModal()">+ Nieuwe les</button>
+        </div>
+        <div id="lessen-lijst"></div>
+      </div>
+
+      <!-- CURSISTEN -->
+      <div id="e-cursisten" class="tab-inhoud verborgen">
+        <div class="pagina-header">
+          <h2>Cursisten</h2>
+        </div>
+        <div id="cursisten-lijst"></div>
+      </div>
+
+      <!-- REACTIES -->
+      <div id="e-reacties" class="tab-inhoud verborgen">
+        <div class="pagina-header">
+          <h2>Reacties op vrijgekomen lessen</h2>
+        </div>
+        <div id="reacties-lijst"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- CURSIST APP -->
+  <div id="scherm-cursist" class="scherm verborgen">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <span class="topbar__logo">📋 Lesplanner</span>
+        <nav class="topbar__nav">
+          <button class="nav-tab active" onclick="cursistTab('mijn-lessen', this)">Mijn lessen</button>
+          <button class="nav-tab" onclick="cursistTab('beschikbaarheid', this)">Beschikbaarheid</button>
+          <button class="nav-tab" onclick="cursistTab('vrije-plekken', this)">Vrije plekken <span id="vrije-badge" class="badge verborgen"></span></button>
+        </nav>
+        <button class="btn btn--ghost btn--sm" onclick="uitloggen()">Uitloggen</button>
+      </div>
+    </header>
+    <main class="main">
+
+      <!-- MIJN LESSEN -->
+      <div id="c-mijn-lessen" class="tab-inhoud">
+        <div class="pagina-header">
+          <h2>Hallo, <span id="cursist-naam"></span> 👋</h2>
+          <p class="sub">Jouw geplande lessen</p>
+        </div>
+        <div id="cursist-lessen-lijst"></div>
+      </div>
+
+      <!-- BESCHIKBAARHEID -->
+      <div id="c-beschikbaarheid" class="tab-inhoud verborgen">
+        <div class="pagina-header">
+          <h2>Mijn beschikbaarheid</h2>
+          <p class="sub">Geef aan wanneer jij beschikbaar bent voor een les</p>
+        </div>
+        <div class="beschikbaarheid-grid" id="beschikbaarheid-grid"></div>
+        <button class="btn btn--primary btn--vol" style="margin-top:1.5rem" onclick="beschikbaarheidOpslaan()">Opslaan</button>
+      </div>
+
+      <!-- VRIJE PLEKKEN -->
+      <div id="c-vrije-plekken" class="tab-inhoud verborgen">
+        <div class="pagina-header">
+          <h2>Vrije plekken</h2>
+          <p class="sub">Beschikbare lessen die jij kunt overnemen</p>
+        </div>
+        <div id="vrije-plekken-lijst"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL: Nieuwe les -->
+  <div class="modal-overlay verborgen" id="les-modal">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 id="les-modal-titel">Nieuwe les toevoegen</h2>
+        <button class="sluit-btn" onclick="sluitModal('les-modal')">&times;</button>
+      </div>
+      <form onsubmit="lesOpslaan(event)">
+        <label>Cursist
+          <select id="les-cursist" required></select>
+        </label>
+        <label>Datum
+          <input type="date" id="les-datum" required />
+        </label>
+        <label>Starttijd
+          <input type="time" id="les-start" value="09:00" required />
+        </label>
+        <label>Eindtijd
+          <input type="time" id="les-eind" value="10:00" required />
+        </label>
+        <label>Locatie
+          <input type="text" id="les-locatie" placeholder="Bijv. Rijschool Centrum" />
+        </label>
+        <div class="modal__acties">
+          <button type="button" class="btn btn--ghost" onclick="sluitModal('les-modal')">Annuleren</button>
+          <button type="submit" class="btn btn--primary">Opslaan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Reacties bekijken -->
+  <div class="modal-overlay verborgen" id="reactie-modal">
+    <div class="modal">
+      <div class="modal__header">
+        <h2>Reacties op vrijgekomen les</h2>
+        <button class="sluit-btn" onclick="sluitModal('reactie-modal')">&times;</button>
+      </div>
+      <div id="reactie-modal-inhoud"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast verborgen"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
