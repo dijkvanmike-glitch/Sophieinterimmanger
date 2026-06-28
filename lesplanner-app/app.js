@@ -52,6 +52,104 @@ const DB = {
         donderdag: ['14:00-16:00', '16:00-18:00'],
         vrijdag: []
       }
+    },
+    {
+      id: 'cursist4',
+      naam: 'Sander de Groot',
+      email: 'sander@email.nl',
+      wachtwoord: '123456',
+      rol: 'cursist',
+      beschikbaarheid: {
+        maandag: ['08:00-10:00', '16:00-18:00'],
+        dinsdag: [],
+        woensdag: ['10:00-12:00'],
+        donderdag: ['08:00-10:00', '14:00-16:00'],
+        vrijdag: ['16:00-18:00']
+      }
+    },
+    {
+      id: 'cursist5',
+      naam: 'Noor Jansen',
+      email: 'noor@email.nl',
+      wachtwoord: '123456',
+      rol: 'cursist',
+      beschikbaarheid: {
+        maandag: ['14:00-16:00'],
+        dinsdag: ['08:00-10:00', '10:00-12:00'],
+        woensdag: ['14:00-16:00', '16:00-18:00'],
+        donderdag: [],
+        vrijdag: ['08:00-10:00', '10:00-12:00']
+      }
+    },
+    {
+      id: 'cursist6',
+      naam: 'Bas Vermeer',
+      email: 'bas@email.nl',
+      wachtwoord: '123456',
+      rol: 'cursist',
+      beschikbaarheid: {
+        maandag: [],
+        dinsdag: ['14:00-16:00', '16:00-18:00'],
+        woensdag: ['08:00-10:00'],
+        donderdag: ['10:00-12:00', '16:00-18:00'],
+        vrijdag: ['14:00-16:00']
+      }
+    },
+    {
+      id: 'cursist7',
+      naam: 'Julia Hendriks',
+      email: 'julia@email.nl',
+      wachtwoord: '123456',
+      rol: 'cursist',
+      beschikbaarheid: {
+        maandag: ['10:00-12:00', '12:00-14:00'],
+        dinsdag: ['16:00-18:00'],
+        woensdag: ['10:00-12:00', '14:00-16:00'],
+        donderdag: ['08:00-10:00'],
+        vrijdag: []
+      }
+    },
+    {
+      id: 'cursist8',
+      naam: 'Finn van Houten',
+      email: 'finn@email.nl',
+      wachtwoord: '123456',
+      rol: 'cursist',
+      beschikbaarheid: {
+        maandag: ['16:00-18:00'],
+        dinsdag: ['10:00-12:00'],
+        woensdag: [],
+        donderdag: ['14:00-16:00', '16:00-18:00'],
+        vrijdag: ['08:00-10:00', '10:00-12:00', '14:00-16:00']
+      }
+    },
+    {
+      id: 'cursist9',
+      naam: 'Lotte Mulder',
+      email: 'lotte@email.nl',
+      wachtwoord: '123456',
+      rol: 'cursist',
+      beschikbaarheid: {
+        maandag: ['08:00-10:00', '10:00-12:00'],
+        dinsdag: ['14:00-16:00'],
+        woensdag: ['16:00-18:00'],
+        donderdag: [],
+        vrijdag: ['10:00-12:00', '16:00-18:00']
+      }
+    },
+    {
+      id: 'cursist10',
+      naam: 'Dylan Peters',
+      email: 'dylan@email.nl',
+      wachtwoord: '123456',
+      rol: 'cursist',
+      beschikbaarheid: {
+        maandag: ['14:00-16:00', '16:00-18:00'],
+        dinsdag: ['08:00-10:00', '12:00-14:00'],
+        woensdag: ['10:00-12:00'],
+        donderdag: ['16:00-18:00'],
+        vrijdag: ['08:00-10:00']
+      }
     }
   ],
 
@@ -91,6 +189,70 @@ const DB = {
       start: '14:00',
       eind: '15:00',
       locatie: 'Rijschool Zuid',
+      status: 'gepland'
+    },
+    {
+      id: 'les5',
+      cursistId: 'cursist4',
+      datum: vandaagPlus(0),
+      start: '08:00',
+      eind: '09:00',
+      locatie: 'Rijschool Centrum',
+      status: 'gepland'
+    },
+    {
+      id: 'les6',
+      cursistId: 'cursist5',
+      datum: vandaagPlus(1),
+      start: '14:00',
+      eind: '15:00',
+      locatie: 'Rijschool Noord',
+      status: 'gepland'
+    },
+    {
+      id: 'les7',
+      cursistId: 'cursist6',
+      datum: vandaagPlus(1),
+      start: '16:00',
+      eind: '17:00',
+      locatie: 'Rijschool Zuid',
+      status: 'afgemeld',
+      afgemeldDoor: 'cursist6'
+    },
+    {
+      id: 'les8',
+      cursistId: 'cursist7',
+      datum: vandaagPlus(2),
+      start: '10:00',
+      eind: '11:00',
+      locatie: 'Rijschool Centrum',
+      status: 'gepland'
+    },
+    {
+      id: 'les9',
+      cursistId: 'cursist8',
+      datum: vandaagPlus(3),
+      start: '16:00',
+      eind: '17:00',
+      locatie: 'Rijschool Noord',
+      status: 'gepland'
+    },
+    {
+      id: 'les10',
+      cursistId: 'cursist9',
+      datum: vandaagPlus(3),
+      start: '08:00',
+      eind: '09:00',
+      locatie: 'Rijschool Zuid',
+      status: 'gepland'
+    },
+    {
+      id: 'les11',
+      cursistId: 'cursist10',
+      datum: vandaagPlus(4),
+      start: '08:00',
+      eind: '09:00',
+      locatie: 'Rijschool Centrum',
       status: 'gepland'
     }
   ],
