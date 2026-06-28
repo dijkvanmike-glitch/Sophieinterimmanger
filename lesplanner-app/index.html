@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesplanner</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -67,9 +67,12 @@
 
       <!-- OVERZICHT -->
       <div id="e-overzicht" class="tab-inhoud">
-        <div class="pagina-header">
-          <h2>Goedemorgen, <span id="eigenaar-naam"></span> 👋</h2>
-          <p class="sub">Hier is het overzicht van vandaag</p>
+        <div class="welkom-hero">
+          <div>
+            <h2>Goedemorgen, <span id="eigenaar-naam"></span> 👋</h2>
+            <p>Hier is het overzicht van vandaag</p>
+          </div>
+          <div class="welkom-hero__ikoon">🚗</div>
         </div>
         <div class="stats-grid">
           <div class="stat-kaart">
@@ -138,9 +141,12 @@
 
       <!-- MIJN LESSEN -->
       <div id="c-mijn-lessen" class="tab-inhoud">
-        <div class="pagina-header">
-          <h2>Hallo, <span id="cursist-naam"></span> 👋</h2>
-          <p class="sub">Jouw geplande lessen</p>
+        <div class="welkom-hero">
+          <div>
+            <h2>Hallo, <span id="cursist-naam"></span> 👋</h2>
+            <p>Jouw geplande lessen staan hieronder</p>
+          </div>
+          <div class="welkom-hero__ikoon">🎓</div>
         </div>
         <div id="cursist-lessen-lijst"></div>
       </div>
