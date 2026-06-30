@@ -1,8 +1,13 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
+  --ss-oranje: #f97316;
+  --ss-oranje-donker: #ea6c0a;
+  --ss-navy: #0f172a;
+  --ss-navy-mid: #1e293b;
+}
   --blauw: #4f6ef7;
   --blauw-donker: #3451d1;
   --blauw-licht: #eef1fe;
@@ -578,6 +583,199 @@ form input:focus, form select:focus, form textarea:focus {
 }
 .welkom-hero p { opacity: .8; font-size: .88rem; }
 .welkom-hero__ikoon { font-size: 3rem; opacity: .6; }
+
+/* ── SnapSlot login stijl ── */
+.ss-login-pagina {
+  min-height: 100vh;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.ss-login-kaart {
+  background: var(--wit);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 4px 6px rgba(0,0,0,.05), 0 20px 60px rgba(0,0,0,.1);
+}
+
+.ss-logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ss-logo__ikoon {
+  background: var(--ss-oranje);
+  color: var(--wit);
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(249,115,22,.4);
+}
+
+.ss-logo__naam {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--ss-navy);
+  letter-spacing: -.03em;
+}
+
+.ss-logo__naam span {
+  color: var(--ss-oranje);
+}
+
+.ss-logo__ikoon--sm {
+  background: var(--ss-oranje);
+  color: var(--wit);
+  padding: .1rem .3rem;
+  border-radius: 5px;
+  font-size: .8rem;
+  margin-right: .1rem;
+}
+
+.ss-oranje { color: var(--ss-oranje); }
+
+.ss-hero-foto {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  height: 180px;
+}
+
+.ss-hero-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ss-titel {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ss-navy);
+  letter-spacing: -.03em;
+  margin-bottom: .3rem;
+}
+
+.ss-sub {
+  color: var(--grijs-400);
+  font-size: .88rem;
+  margin-bottom: 1.25rem;
+}
+
+.ss-demo {
+  margin-bottom: 1.25rem;
+}
+
+.ss-demo__label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--grijs-400);
+  margin-bottom: .75rem;
+}
+
+.ss-demo__eigenaar {
+  width: 100%;
+  background: var(--ss-navy);
+  color: var(--wit);
+  border: none;
+  border-radius: 12px;
+  padding: .9rem 1.25rem;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .6rem;
+  transition: background .2s, transform .2s;
+  font-family: inherit;
+}
+.ss-demo__eigenaar:hover { background: #1e293b; transform: translateY(-1px); }
+
+.ss-demo__ikoon {
+  background: var(--ss-oranje);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .95rem;
+  flex-shrink: 0;
+}
+
+.ss-demo__cursisten {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.ss-demo__cursist {
+  width: 100%;
+  background: var(--wit);
+  border: 1.5px solid var(--grijs-200);
+  border-radius: 10px;
+  padding: .7rem 1rem;
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--grijs-700);
+  transition: all .15s;
+  font-family: inherit;
+  text-align: left;
+}
+.ss-demo__cursist:hover {
+  border-color: var(--ss-oranje);
+  color: var(--ss-oranje);
+  background: #fff7ed;
+}
+
+.ss-btn-inloggen {
+  width: 100%;
+  background: var(--ss-oranje);
+  color: var(--wit);
+  border: none;
+  border-radius: 12px;
+  padding: .85rem;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+  font-family: inherit;
+  margin-top: .25rem;
+  box-shadow: 0 4px 15px rgba(249,115,22,.35);
+}
+.ss-btn-inloggen:hover { background: var(--ss-oranje-donker); transform: translateY(-1px); }
+
+/* Topbar logo aanpassing */
+.topbar__logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ss-navy) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--ss-navy) !important;
+  flex-shrink: 0;
+  letter-spacing: -.02em;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
 
 @media (max-width: 640px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
