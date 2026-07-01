@@ -1,0 +1,5 @@
+# Netlify configuratie voor SnapSlot
+# Publiceert de app uit de map lesplanner-app
+
+[build]
+  publish = "lesplanner-app"
