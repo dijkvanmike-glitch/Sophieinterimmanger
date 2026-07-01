@@ -584,56 +584,123 @@ form input:focus, form select:focus, form textarea:focus {
 .welkom-hero p { opacity: .8; font-size: .88rem; }
 .welkom-hero__ikoon { font-size: 3rem; opacity: .6; }
 
-/* ── SnapSlot login stijl ── */
-.ss-login-pagina {
+/* ── SnapSlot premium split-login ── */
+.ss-split {
   min-height: 100vh;
-  background: #f1f5f9;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+/* Linkerkant beeld */
+.ss-split__beeld {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+.ss-split__beeld img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ss-split__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(15,23,42,.55) 0%, rgba(15,23,42,.72) 60%, rgba(234,108,10,.55) 100%);
+}
+.ss-split__merk {
+  position: relative;
+  z-index: 2;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--wit);
+  width: 100%;
+}
+.ss-split__pitch { margin-top: auto; }
+.ss-split__pitch h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  max-width: 420px;
+}
+.ss-split__pitch p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: .85;
+  max-width: 380px;
+}
+.ss-split__punten {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.ss-punt {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .95rem;
+  font-weight: 500;
+}
+.ss-punt span {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
-.ss-login-kaart {
-  background: var(--wit);
-  border-radius: 20px;
+/* Rechterkant formulier */
+.ss-split__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
+  background: var(--wit);
+  overflow-y: auto;
+}
+.ss-form-inner {
   width: 100%;
-  max-width: 460px;
-  box-shadow: 0 4px 6px rgba(0,0,0,.05), 0 20px 60px rgba(0,0,0,.1);
+  max-width: 380px;
 }
 
 .ss-logo {
   display: flex;
   align-items: center;
-  gap: .5rem;
-  margin-bottom: 1.25rem;
+  gap: .55rem;
+  margin-bottom: 2rem;
 }
-
+.ss-logo--licht .ss-logo__naam { color: var(--wit); }
+.ss-logo--mobiel { display: none; }
 .ss-logo__ikoon {
   background: var(--ss-oranje);
   color: var(--wit);
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 12px rgba(249,115,22,.4);
+  font-size: 1.15rem;
+  box-shadow: 0 6px 16px rgba(249,115,22,.45);
 }
-
 .ss-logo__naam {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--ss-navy);
   letter-spacing: -.03em;
 }
-
-.ss-logo__naam span {
-  color: var(--ss-oranje);
-}
-
+.ss-logo__naam span { color: var(--ss-oranje); }
 .ss-logo__ikoon--sm {
   background: var(--ss-oranje);
   color: var(--wit);
@@ -642,41 +709,22 @@ form input:focus, form select:focus, form textarea:focus {
   font-size: .8rem;
   margin-right: .1rem;
 }
-
 .ss-oranje { color: var(--ss-oranje); }
 
-.ss-hero-foto {
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-  height: 180px;
-}
-
-.ss-hero-foto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .ss-titel {
-  font-size: 1.5rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--ss-navy);
   letter-spacing: -.03em;
-  margin-bottom: .3rem;
+  margin-bottom: .4rem;
 }
-
 .ss-sub {
   color: var(--grijs-400);
-  font-size: .88rem;
-  margin-bottom: 1.25rem;
+  font-size: .92rem;
+  margin-bottom: 1.75rem;
 }
 
-.ss-demo {
-  margin-bottom: 1.25rem;
-}
-
+.ss-demo { margin-bottom: 1.5rem; }
 .ss-demo__label {
   font-size: .72rem;
   font-weight: 700;
@@ -685,26 +733,26 @@ form input:focus, form select:focus, form textarea:focus {
   color: var(--grijs-400);
   margin-bottom: .75rem;
 }
-
 .ss-demo__eigenaar {
   width: 100%;
   background: var(--ss-navy);
   color: var(--wit);
   border: none;
-  border-radius: 12px;
-  padding: .9rem 1.25rem;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
   font-size: .95rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: .75rem;
-  margin-bottom: .6rem;
-  transition: background .2s, transform .2s;
+  transition: transform .2s, box-shadow .2s;
   font-family: inherit;
+  box-shadow: 0 8px 20px rgba(15,23,42,.18);
 }
-.ss-demo__eigenaar:hover { background: #1e293b; transform: translateY(-1px); }
-
+.ss-demo__eigenaar:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15,23,42,.25); }
+.ss-demo__pijl { margin-left: auto; transition: transform .2s; }
+.ss-demo__eigenaar:hover .ss-demo__pijl { transform: translateX(4px); }
 .ss-demo__ikoon {
   background: var(--ss-oranje);
   width: 32px;
@@ -717,24 +765,35 @@ form input:focus, form select:focus, form textarea:focus {
   flex-shrink: 0;
 }
 
-.ss-demo__cursisten {
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
+.ss-demo__meer {
+  margin-top: .75rem;
 }
-
+.ss-demo__meer summary {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--grijs-600);
+  cursor: pointer;
+  padding: .5rem 0;
+  list-style: none;
+  user-select: none;
+}
+.ss-demo__meer summary::-webkit-details-marker { display: none; }
+.ss-demo__meer summary::before { content: '▸ '; color: var(--ss-oranje); }
+.ss-demo__meer[open] summary::before { content: '▾ '; }
+.ss-demo__cursisten {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  margin-top: .6rem;
+}
 .ss-demo__cursist {
-  width: 100%;
-  background: var(--wit);
+  background: var(--grijs-50);
   border: 1.5px solid var(--grijs-200);
   border-radius: 10px;
-  padding: .7rem 1rem;
-  font-size: .88rem;
+  padding: .6rem .75rem;
+  font-size: .85rem;
   font-weight: 600;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: .6rem;
   color: var(--grijs-700);
   transition: all .15s;
   font-family: inherit;
@@ -751,17 +810,17 @@ form input:focus, form select:focus, form textarea:focus {
   background: var(--ss-oranje);
   color: var(--wit);
   border: none;
-  border-radius: 12px;
-  padding: .85rem;
+  border-radius: 14px;
+  padding: .95rem;
   font-size: .95rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background .2s, transform .2s;
+  transition: background .2s, transform .2s, box-shadow .2s;
   font-family: inherit;
-  margin-top: .25rem;
-  box-shadow: 0 4px 15px rgba(249,115,22,.35);
+  margin-top: .5rem;
+  box-shadow: 0 8px 20px rgba(249,115,22,.35);
 }
-.ss-btn-inloggen:hover { background: var(--ss-oranje-donker); transform: translateY(-1px); }
+.ss-btn-inloggen:hover { background: var(--ss-oranje-donker); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(249,115,22,.45); }
 
 /* Topbar logo aanpassing */
 .topbar__logo {
@@ -777,6 +836,14 @@ form input:focus, form select:focus, form textarea:focus {
   gap: .35rem;
 }
 
+/* Tablet: beeldpaneel smaller */
+@media (max-width: 960px) {
+  .ss-split { grid-template-columns: 1fr; }
+  .ss-split__beeld { display: none; }
+  .ss-split__form { align-items: flex-start; padding-top: 3rem; }
+  .ss-logo--mobiel { display: flex; }
+}
+
 @media (max-width: 640px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .topbar__nav { gap: 0; }
@@ -784,4 +851,6 @@ form input:focus, form select:focus, form textarea:focus {
   .kaart { flex-wrap: wrap; }
   .welkom-hero { flex-direction: column; gap: 1rem; }
   .main { padding: 1.25rem 1rem; }
+  .ss-demo__cursisten { grid-template-columns: 1fr 1fr; }
+  .ss-split__form { padding: 1.5rem; }
 }

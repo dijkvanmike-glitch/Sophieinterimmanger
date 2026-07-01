@@ -11,73 +11,112 @@
 
   <!-- LOGIN SCHERM -->
   <div id="scherm-login" class="scherm">
-    <div class="ss-login-pagina">
-      <div class="ss-login-kaart">
+    <div class="ss-split">
 
-        <!-- Logo -->
-        <div class="ss-logo">
-          <div class="ss-logo__ikoon">⚡</div>
-          <span class="ss-logo__naam">Snap<span>Slot</span></span>
-        </div>
-
-        <!-- Foto -->
-        <div class="ss-hero-foto">
-          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260701_134947_1c831bb8-08b1-4def-91d0-6f925a76f20a.png" alt="Lesauto in Nederlands straatbeeld" />
-        </div>
-
-        <h1 class="ss-titel">Welkom terug</h1>
-        <p class="ss-sub">Log in om verder te gaan</p>
-
-        <!-- Demo accounts -->
-        <div class="ss-demo">
-          <p class="ss-demo__label">Demo accounts — klik om in te loggen</p>
-          <button class="ss-demo__eigenaar" onclick="demoLogin('eigenaar')">
-            <span class="ss-demo__ikoon">👑</span>
-            Inloggen als Eigenaar
-          </button>
-          <div class="ss-demo__cursisten">
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist1')"><span>🎓</span> Lisa (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist2')"><span>🎓</span> Tom (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist3')"><span>🎓</span> Emma (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist4')"><span>🎓</span> Sander (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist5')"><span>🎓</span> Noor (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist6')"><span>🎓</span> Bas (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist7')"><span>🎓</span> Julia (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist8')"><span>🎓</span> Finn (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist9')"><span>🎓</span> Lotte (cursist)</button>
-            <button class="ss-demo__cursist" onclick="demoLogin('cursist10')"><span>🎓</span> Dylan (cursist)</button>
+      <!-- Linkerkant: sfeerbeeld -->
+      <div class="ss-split__beeld">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260701_134947_1c831bb8-08b1-4def-91d0-6f925a76f20a.png" alt="Lesauto in Nederlands straatbeeld" />
+        <div class="ss-split__overlay"></div>
+        <div class="ss-split__merk">
+          <div class="ss-logo ss-logo--licht">
+            <div class="ss-logo__ikoon">⚡</div>
+            <span class="ss-logo__naam">Snap<span>Slot</span></span>
+          </div>
+          <div class="ss-split__pitch">
+            <h2>Nooit meer een lege lesplek.</h2>
+            <p>Meld af, wij vullen automatisch de plek met een beschikbare cursist. Zo simpel is het.</p>
+          </div>
+          <div class="ss-split__punten">
+            <div class="ss-punt"><span>⚡</span> Direct de juiste cursist gevonden</div>
+            <div class="ss-punt"><span>📅</span> Altijd een volle agenda</div>
+            <div class="ss-punt"><span>✅</span> Geen gemiste inkomsten</div>
           </div>
         </div>
-
-        <div class="scheidslijn"><span>of log in met e-mail</span></div>
-
-        <form onsubmit="inloggen(event)">
-          <label>E-mailadres<input type="email" id="login-email" placeholder="naam@email.nl" /></label>
-          <label>Wachtwoord<input type="password" id="login-ww" placeholder="••••••••" /></label>
-          <button type="submit" class="ss-btn-inloggen">Inloggen</button>
-        </form>
-
-        <p class="register-link">Nog geen account? <a href="#" onclick="toonScherm('scherm-registreer')">Registreer hier</a></p>
       </div>
+
+      <!-- Rechterkant: inloggen -->
+      <div class="ss-split__form">
+        <div class="ss-form-inner">
+          <div class="ss-logo ss-logo--mobiel">
+            <div class="ss-logo__ikoon">⚡</div>
+            <span class="ss-logo__naam">Snap<span>Slot</span></span>
+          </div>
+
+          <h1 class="ss-titel">Welkom terug</h1>
+          <p class="ss-sub">Log in om verder te gaan</p>
+
+          <div class="ss-demo">
+            <p class="ss-demo__label">Demo — klik om direct in te loggen</p>
+            <button class="ss-demo__eigenaar" onclick="demoLogin('eigenaar')">
+              <span class="ss-demo__ikoon">👑</span>
+              <span>Inloggen als Eigenaar</span>
+              <span class="ss-demo__pijl">→</span>
+            </button>
+            <details class="ss-demo__meer">
+              <summary>Of log in als cursist (10 demo's)</summary>
+              <div class="ss-demo__cursisten">
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist1')">🎓 Lisa</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist2')">🎓 Tom</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist3')">🎓 Emma</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist4')">🎓 Sander</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist5')">🎓 Noor</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist6')">🎓 Bas</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist7')">🎓 Julia</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist8')">🎓 Finn</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist9')">🎓 Lotte</button>
+                <button class="ss-demo__cursist" onclick="demoLogin('cursist10')">🎓 Dylan</button>
+              </div>
+            </details>
+          </div>
+
+          <div class="scheidslijn"><span>of log in met e-mail</span></div>
+
+          <form onsubmit="inloggen(event)">
+            <label>E-mailadres<input type="email" id="login-email" placeholder="naam@email.nl" /></label>
+            <label>Wachtwoord<input type="password" id="login-ww" placeholder="••••••••" /></label>
+            <button type="submit" class="ss-btn-inloggen">Inloggen</button>
+          </form>
+
+          <p class="register-link">Nog geen account? <a href="#" onclick="toonScherm('scherm-registreer')">Registreer hier</a></p>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <!-- REGISTREER SCHERM -->
   <div id="scherm-registreer" class="scherm verborgen">
-    <div class="ss-login-pagina">
-      <div class="ss-login-kaart">
-        <div class="ss-logo">
-          <div class="ss-logo__ikoon">⚡</div>
-          <span class="ss-logo__naam">Snap<span>Slot</span></span>
+    <div class="ss-split">
+      <div class="ss-split__beeld">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/hf_20260701_134947_1c831bb8-08b1-4def-91d0-6f925a76f20a.png" alt="Lesauto in Nederlands straatbeeld" />
+        <div class="ss-split__overlay"></div>
+        <div class="ss-split__merk">
+          <div class="ss-logo ss-logo--licht">
+            <div class="ss-logo__ikoon">⚡</div>
+            <span class="ss-logo__naam">Snap<span>Slot</span></span>
+          </div>
+          <div class="ss-split__pitch">
+            <h2>Word lid van SnapSlot.</h2>
+            <p>Maak een account aan en mis nooit meer een vrije lesplek.</p>
+          </div>
         </div>
-        <h1 class="ss-titel">Account aanmaken</h1>
-        <form onsubmit="registreren(event)">
-          <label>Volledige naam<input type="text" id="reg-naam" placeholder="Jan Jansen" required /></label>
-          <label>E-mailadres<input type="email" id="reg-email" placeholder="naam@email.nl" required /></label>
-          <label>Wachtwoord<input type="password" id="reg-ww" placeholder="Minimaal 6 tekens" required /></label>
-          <button type="submit" class="ss-btn-inloggen">Account aanmaken</button>
-        </form>
-        <p class="register-link"><a href="#" onclick="toonScherm('scherm-login')">← Terug naar inloggen</a></p>
+      </div>
+      <div class="ss-split__form">
+        <div class="ss-form-inner">
+          <div class="ss-logo ss-logo--mobiel">
+            <div class="ss-logo__ikoon">⚡</div>
+            <span class="ss-logo__naam">Snap<span>Slot</span></span>
+          </div>
+          <h1 class="ss-titel">Account aanmaken</h1>
+          <p class="ss-sub">Vul je gegevens in om te starten</p>
+          <form onsubmit="registreren(event)">
+            <label>Volledige naam<input type="text" id="reg-naam" placeholder="Jan Jansen" required /></label>
+            <label>E-mailadres<input type="email" id="reg-email" placeholder="naam@email.nl" required /></label>
+            <label>Wachtwoord<input type="password" id="reg-ww" placeholder="Minimaal 6 tekens" required /></label>
+            <button type="submit" class="ss-btn-inloggen">Account aanmaken</button>
+          </form>
+          <p class="register-link"><a href="#" onclick="toonScherm('scherm-login')">← Terug naar inloggen</a></p>
+        </div>
       </div>
     </div>
   </div>
