@@ -3,21 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sophie Broers — Interim Management & Business Leadership</title>
-  <meta name="description" content="Sophie Broers — Interim manager in HR, operations en business leadership. Resultaatgericht leiderschap voor organisaties in transitie. Noord-Holland." />
+  <title>Sophie Broers — Interim Manager & Business Leader | HR · Operations · P&amp;L</title>
+  <meta name="description" content="Sophie Broers — interim manager en business leader in HR, operations en P&L. Resultaatgericht, mensgericht leiderschap voor organisaties in transitie, groei en verandering. Noord-Holland." />
+  <meta name="author" content="Sophie Broers" />
+  <meta name="theme-color" content="#14181f" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sophie Broers — Interim Manager & Business Leader" />
+  <meta property="og:description" content="Resultaatgericht, mensgericht leiderschap voor organisaties in transitie, groei en verandering." />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:image" content="assets/sophie.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon: SB monogram in gold -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314181f'/%3E%3Ctext x='50%25' y='54%25' font-family='Georgia,serif' font-size='30' fill='%23c9a878' text-anchor='middle' dominant-baseline='middle'%3ESB%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sophie Broers",
+    "jobTitle": "Interim Manager & Business Leader",
+    "description": "Interim manager en business leader in HR, operations en P&L.",
+    "email": "mailto:sophie_broers@hotmail.com",
+    "telephone": "+31643012970",
+    "url": "https://dijkvanmike-glitch.github.io/Sophieinterimmanger",
+    "sameAs": ["https://www.linkedin.com/in/sophie-broers-6456838/"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Hoorn", "addressRegion": "Noord-Holland", "addressCountry": "NL" },
+    "knowsAbout": ["Interim Management", "HR", "Operations", "P&L", "Organisatieverandering", "Crisis Management", "Leiderschap"]
+  }
+  </script>
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <span>SB</span>
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" /></svg>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- Navigation -->
   <header class="nav" id="nav">
     <div class="nav__inner container">
-      <a href="#hero" class="nav__brand">
+      <a href="#hero" class="nav__brand" data-cursor="hover">
         <span class="nav__monogram">SB</span>
         <span class="nav__name">Sophie&nbsp;Broers</span>
       </a>
@@ -26,9 +74,10 @@
         <a href="#expertise">Expertise</a>
         <a href="#approach">Werkwijze</a>
         <a href="#track">Ervaring</a>
-        <a href="#contact" class="nav__cta">Contact</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="nav__cta" data-cursor="hover">Contact</a>
       </nav>
-      <button class="nav__toggle" id="navToggle" aria-label="Menu openen">
+      <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -38,23 +87,66 @@
   <section class="hero" id="hero">
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="container hero__inner">
-      <p class="hero__eyebrow reveal">Interim Management · HR · Operations</p>
-      <h1 class="hero__title reveal">
-        Leiderschap dat<br /><em>resultaat</em> brengt.
-      </h1>
-      <p class="hero__lede reveal">
-        Met ruim vijftien jaar ervaring als P&amp;L-verantwoordelijk business leader
-        help ik organisaties door transitie, groei en verandering — pragmatisch,
-        mensgericht en met oog voor het rendement.
-      </p>
-      <div class="hero__actions reveal">
-        <a href="#contact" class="btn btn--primary">Plan een kennismaking</a>
-        <a href="#about" class="btn btn--ghost">Maak kennis met Sophie</a>
+      <div class="hero__text">
+        <p class="hero__eyebrow reveal">
+          <span class="hero__pulse"></span>Beschikbaar voor interim-opdrachten
+        </p>
+        <h1 class="hero__title reveal">
+          Leiderschap dat<br /><em>resultaat</em> brengt.
+        </h1>
+        <p class="hero__lede reveal">
+          Met ruim vijftien jaar ervaring als P&amp;L-verantwoordelijk business leader
+          help ik organisaties door transitie, groei en verandering — pragmatisch,
+          mensgericht en met oog voor het rendement.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#contact" class="btn btn--primary" data-cursor="hover" data-magnetic>Plan een kennismaking</a>
+          <a href="#about" class="btn btn--ghost" data-cursor="hover" data-magnetic>Maak kennis met Sophie</a>
+        </div>
       </div>
+      <aside class="hero__card reveal" aria-hidden="true">
+        <div class="hero__card-rating">
+          <div class="hero__stars">★★★★★</div>
+          <span>Bewezen staat van dienst</span>
+        </div>
+        <p class="hero__card-quote">
+          "Sophie combineert financiële scherpte met oprechte aandacht voor mensen —
+          verandering die écht beklijft."
+        </p>
+        <div class="hero__card-meta">
+          <span class="hero__card-avatar">DR</span>
+          <span>Directieteam · automotive</span>
+        </div>
+      </aside>
     </div>
     <a href="#about" class="hero__scroll" aria-label="Scroll naar beneden">
       <span></span>
     </a>
+  </section>
+
+  <!-- Trust / logo marquee -->
+  <section class="trust" aria-label="Ervaring bij organisaties">
+    <div class="container">
+      <p class="trust__label reveal">Leidinggevende rollen bij o.a.</p>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Louwman</span><span class="marquee__dot">·</span>
+        <span>Sodexo</span><span class="marquee__dot">·</span>
+        <span>CGI</span><span class="marquee__dot">·</span>
+        <span>Toyota</span><span class="marquee__dot">·</span>
+        <span>Suzuki</span><span class="marquee__dot">·</span>
+        <span>Nyenrode</span><span class="marquee__dot">·</span>
+        <span>Universiteit van Amsterdam</span><span class="marquee__dot">·</span>
+        <span>Louwman</span><span class="marquee__dot">·</span>
+        <span>Sodexo</span><span class="marquee__dot">·</span>
+        <span>CGI</span><span class="marquee__dot">·</span>
+        <span>Toyota</span><span class="marquee__dot">·</span>
+        <span>Suzuki</span><span class="marquee__dot">·</span>
+        <span>Nyenrode</span><span class="marquee__dot">·</span>
+        <span>Universiteit van Amsterdam</span><span class="marquee__dot">·</span>
+      </div>
+    </div>
   </section>
 
   <!-- Stats -->
@@ -84,8 +176,7 @@
     <div class="container about__grid">
       <div class="about__media reveal">
         <div class="about__photo">
-          <!-- Vervang src door de foto van Sophie: assets/sophie.jpg -->
-          <img src="assets/sophie.jpg" alt="Sophie Broers" onerror="this.parentNode.classList.add('about__photo--placeholder'); this.style.display='none';" />
+          <img src="assets/sophie.jpg" alt="Portret van Sophie Broers" loading="lazy" onerror="this.parentNode.classList.add('about__photo--placeholder'); this.style.display='none';" />
           <span class="about__photo-fallback">Foto van Sophie<br /><small>plaats als assets/sophie.jpg</small></span>
         </div>
         <div class="about__badge">
@@ -116,6 +207,7 @@
           <li>Empathisch leiderschap</li>
           <li>Strategisch denker</li>
         </ul>
+        <a href="#contact" class="about__link" data-cursor="hover">Plan een kennismaking <span>→</span></a>
       </div>
     </div>
   </section>
@@ -128,27 +220,33 @@
         <h2 class="section__title">Waar ik het verschil maak</h2>
       </div>
       <div class="expertise__grid">
-        <article class="card reveal">
+        <article class="card reveal" data-cursor="hover">
+          <span class="card__num">01</span>
           <h3>Interim &amp; Crisis Management</h3>
           <p>Tijdelijk eindverantwoordelijk leiderschap bij groei, reorganisatie of het overbruggen van een vacature op directieniveau.</p>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" data-cursor="hover">
+          <span class="card__num">02</span>
           <h3>Operations &amp; P&amp;L</h3>
           <p>Sturen op operationele excellentie en financieel resultaat. Van service delivery tot procurement, QHSE en logistiek.</p>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" data-cursor="hover">
+          <span class="card__num">03</span>
           <h3>HR &amp; Organisatieverandering</h3>
           <p>Strategische personeelsplanning, talentontwikkeling, reorganisaties en CAO-onderhandelingen — met juridische diepgang.</p>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" data-cursor="hover">
+          <span class="card__num">04</span>
           <h3>Groei &amp; Strategie</h3>
           <p>Het bouwen en uitvoeren van groeistrategieën, nieuwe commerciële proposities en strategische initiatieven.</p>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" data-cursor="hover">
+          <span class="card__num">05</span>
           <h3>Employee Engagement</h3>
           <p>Een cultuur creëren waarin mensen presteren én blijven. Betrokkenheid als motor onder duurzaam resultaat.</p>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" data-cursor="hover">
+          <span class="card__num">06</span>
           <h3>Leiderschap in transitie</h3>
           <p>Teams begeleiden door verandering, met heldere koers, draagvlak en aandacht voor de menselijke kant.</p>
         </article>
@@ -193,6 +291,33 @@
             <p>Resultaat dat blijft, ook nadat ik vertrek.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section__head section__head--center reveal">
+        <p class="section__eyebrow">Wat opdrachtgevers zeggen</p>
+        <h2 class="section__title">Vertrouwen dat je terugverdient</h2>
+      </div>
+      <div class="testimonials__grid">
+        <figure class="quote reveal">
+          <div class="quote__stars">★★★★★</div>
+          <blockquote>Sophie stapte in tijdens een lastige transitie en bracht binnen weken rust, richting en resultaat. Ze stuurt scherp op cijfers zonder de mensen uit het oog te verliezen.</blockquote>
+          <figcaption><span class="quote__name">Lid directieteam</span><span class="quote__role">Automotive · cluster van 8 vestigingen</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <div class="quote__stars">★★★★★</div>
+          <blockquote>Een zeldzame combinatie van strategische diepgang en hands-on uitvoering. Waar Sophie leidt, ontstaat draagvlak — en dat blijft ook na haar vertrek.</blockquote>
+          <figcaption><span class="quote__name">HR-directeur</span><span class="quote__role">Energy &amp; Resources</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <div class="quote__stars">★★★★★</div>
+          <blockquote>Volledige P&amp;L-verantwoordelijkheid, een complexe matrixorganisatie én groei realiseren — Sophie deed het alle drie tegelijk, met natuurlijk overwicht.</blockquote>
+          <figcaption><span class="quote__name">Operationeel manager</span><span class="quote__role">Service delivery</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -249,41 +374,95 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq section" id="faq">
+    <div class="container faq__grid">
+      <div class="faq__intro reveal">
+        <p class="section__eyebrow">Veelgestelde vragen</p>
+        <h2 class="section__title">Goed om te weten</h2>
+        <p>Nog een vraag die er niet tussen staat? <a href="#contact" data-cursor="hover">Neem gerust contact op.</a></p>
+      </div>
+      <div class="faq__list reveal">
+        <details class="faq__item">
+          <summary>Voor welke opdrachten ben je inzetbaar?</summary>
+          <div class="faq__answer"><p>Interim- en crisis­management op directie- en managementniveau: overbrugging van een vacature, aansturing van een transitie of reorganisatie, en het realiseren van groei. Van P&amp;L-verantwoordelijk operations tot een volledige HR-functie.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>In welke regio en sectoren werk je?</summary>
+          <div class="faq__answer"><p>Standplaats Hoorn, actief in heel Noord-Holland en de Randstad. Ervaring in automotive, energy &amp; resources, facility/service delivery en corporate services — de aanpak is sectoroverstijgend.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Hoe snel kun je starten?</summary>
+          <div class="faq__answer"><p>Afhankelijk van lopende verplichtingen meestal op korte termijn. Neem contact op voor de actuele beschikbaarheid, dan bespreken we de mogelijkheden.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Wat maakt jouw aanpak anders?</summary>
+          <div class="faq__answer"><p>De combinatie van financieel-strategische scherpte en oprechte aandacht voor mensen. Ik stuur op meetbaar resultaat én op draagvlak, zodat verandering beklijft nadat ik vertrek.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Hoe verloopt een kennismaking?</summary>
+          <div class="faq__answer"><p>Vrijblijvend en persoonlijk. In een eerste gesprek verkennen we de uitdaging, de organisatie en de gewenste uitkomst. Daarna volgt een helder voorstel voor aanpak en inzet.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section class="contact section" id="contact">
     <div class="container contact__inner reveal">
       <p class="section__eyebrow">Contact</p>
       <h2 class="section__title">Laten we kennismaken</h2>
       <p class="contact__lede">
-        Op zoek naar een interim leider die snel impact maakt? Neem gerust
-        contact op voor een vrijblijvend gesprek.
+        Op zoek naar een interim leider die snel impact maakt? Laat een bericht
+        achter of neem direct contact op voor een vrijblijvend gesprek.
       </p>
+
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="field">
+          <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder=" " />
+          <label for="cf-name">Naam</label>
+        </div>
+        <div class="field">
+          <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder=" " />
+          <label for="cf-email">E-mailadres</label>
+        </div>
+        <div class="field field--full">
+          <textarea id="cf-message" name="message" rows="4" required placeholder=" "></textarea>
+          <label for="cf-message">Waar kan ik mee helpen?</label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--large" data-cursor="hover" data-magnetic>Verstuur bericht</button>
+        <p class="contact__form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+
       <div class="contact__methods">
-        <a href="mailto:sophie_broers@hotmail.com" class="contact__item">
+        <a href="mailto:sophie_broers@hotmail.com" class="contact__item" data-cursor="hover">
           <span class="contact__label">E-mail</span>
           <span class="contact__value">sophie_broers@hotmail.com</span>
         </a>
-        <a href="tel:+31643012970" class="contact__item">
+        <a href="tel:+31643012970" class="contact__item" data-cursor="hover">
           <span class="contact__label">Telefoon</span>
           <span class="contact__value">+31 6 43012970</span>
         </a>
-        <a href="https://www.linkedin.com/in/sophie-broers-6456838/" target="_blank" rel="noopener" class="contact__item">
+        <a href="https://www.linkedin.com/in/sophie-broers-6456838/" target="_blank" rel="noopener" class="contact__item" data-cursor="hover">
           <span class="contact__label">LinkedIn</span>
           <span class="contact__value">sophie-broers</span>
         </a>
       </div>
-      <a href="mailto:sophie_broers@hotmail.com" class="btn btn--primary btn--large">Stuur een bericht</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <span class="footer__brand">Sophie Broers</span>
+      <a href="#hero" class="footer__brand" data-cursor="hover">
+        <span class="footer__monogram">SB</span> Sophie Broers
+      </a>
       <span class="footer__tag">Interim Management · Noord-Holland</span>
-      <span class="footer__copy">© <span id="year"></span> Sophie Broers</span>
+      <span class="footer__copy">© <span id="year"></span> Sophie Broers · Alle rechten voorbehouden</span>
     </div>
   </footer>
+
+  <a href="#hero" class="to-top" id="toTop" aria-label="Terug naar boven" data-cursor="hover">↑</a>
 
   <script src="js/script.js"></script>
 </body>
