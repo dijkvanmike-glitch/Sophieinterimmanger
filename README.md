@@ -12,11 +12,9 @@ via dezelfde link.
 
 ## Wat zit erin
 
-- `index.html` — de complete website (één pagina): hero, cijfers, over, expertise,
-  werkwijze, testimonials, loopbaan, FAQ en contactformulier
-- `css/styles.css` — het premium design system
-- `js/script.js` — preloader, custom cursor, magnetische knoppen, scroll-progress,
-  reveals, tellende cijfers, FAQ-accordion en contactformulier
+- `index.html` — de complete website (één pagina)
+- `css/styles.css` — het premium design
+- `js/script.js` — animaties en interactie
 - `assets/` — foto van Sophie (`assets/sophie.jpg`)
 - `.github/workflows/deploy.yml` — publiceert de site automatisch naar GitHub Pages
 
