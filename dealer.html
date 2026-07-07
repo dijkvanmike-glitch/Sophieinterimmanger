@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRISKI — Dealerinformatie</title>
+<meta name="description" content="Word BRISKI-dealer: een onderscheidend elektrisch driewiel-product met aantrekkelijke marges, volledige ondersteuning en een groeiende doelgroep.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317190F'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23A8D426'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23F5F3EC'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BRISKI — Dealerinformatie">
+<meta property="og:description" content="Een onderscheidend product, aantrekkelijke marges en volledige ondersteuning vanuit de importeur.">
+<meta property="og:image" content="https://d2ol7oe51mr4n9.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/4a27eaad-c1b3-4063-80d9-d3f851e18bf2.png">
+<meta property="og:locale" content="nl_NL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17190F; --ink-2: #2A2C20; --grey: #55574A; --grey-2: #6B6D5F;
+    --cream: #F5F3EC; --card: #FBFAF4; --line: rgba(23,25,15,0.08);
+    --lime: #A8D426; --olive: #5B7A0E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #E9E7DC; color: var(--ink); font-family: 'Manrope', system-ui, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pagina { max-width: 860px; margin: 24px auto; background: var(--cream); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 20px 50px rgba(23,25,15,0.12); }
+
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 36px; background: var(--ink); color: var(--cream); }
+  .logo { display: flex; align-items: center; gap: 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.04em; }
+  .logo .dot { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(135deg, var(--lime), var(--olive)); display: inline-flex; align-items: center; justify-content: center; }
+  .logo .dot span { width: 6px; height: 6px; border-radius: 50%; background: var(--cream); }
+  header .tag { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lime); font-weight: 700; }
+
+  .hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; padding: 34px 36px 26px; align-items: center; }
+  .hero h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 12px; }
+  .hero h1 em { font-style: normal; color: var(--olive); }
+  .hero p { color: var(--grey); font-size: 15px; line-height: 1.6; }
+  .hero .foto { background: radial-gradient(120% 100% at 50% 20%, #FFFFFF 0%, #EEEDE3 60%, #E4E2D6 100%); border: 1px solid var(--line); border-radius: 16px; padding: 10px; text-align: center; }
+  .hero .foto img { max-width: 100%; max-height: 250px; object-fit: contain; filter: drop-shadow(0 14px 18px rgba(23,25,15,0.16)); }
+
+  .strook { display: flex; gap: 0; background: var(--ink); color: var(--cream); padding: 12px 36px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; justify-content: space-between; flex-wrap: wrap; }
+  .strook span b { color: var(--lime); font-weight: 600; }
+
+  .kolommen { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; padding: 26px 36px; }
+  h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; margin-bottom: 12px; }
+  h2 .label { display: block; font-size: 11px; letter-spacing: 0.14em; color: var(--olive); text-transform: uppercase; margin-bottom: 4px; }
+  ul { list-style: none; }
+  li { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); margin-bottom: 9px; }
+  li .v { color: var(--olive); font-weight: 700; flex-shrink: 0; }
+  li b { font-weight: 700; }
+  li small { display: block; color: var(--grey-2); font-size: 12.5px; }
+
+  .doelgroep { padding: 0 36px 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { border: 1px solid rgba(91,122,14,0.35); background: var(--card); color: var(--ink-2); border-radius: 100px; padding: 7px 14px; font-size: 12.5px; font-weight: 600; }
+  .chip b { color: var(--olive); }
+
+  .cta { margin: 22px 36px 30px; border-radius: 16px; background: linear-gradient(135deg, var(--ink), #1E2014); color: var(--cream); padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+  .cta h2 { color: var(--cream); margin-bottom: 4px; }
+  .cta p { color: #C7C9BB; font-size: 13px; }
+  .cta .knoppen { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cta a.primair { background: var(--lime); color: #12140C; text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 22px; border-radius: 100px; }
+  .cta a.secundair { border: 1px solid rgba(245,243,236,0.4); color: var(--cream); text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 100px; }
+
+  footer { padding: 14px 36px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--grey-2); font-size: 12px; }
+  footer a { color: var(--olive); text-decoration: none; font-weight: 600; }
+
+  @media (max-width: 640px) {
+    .hero, .kolommen { grid-template-columns: 1fr; }
+  }
+  @media print {
+    body { background: var(--cream); }
+    .pagina { margin: 0; max-width: none; border: none; border-radius: 0; box-shadow: none; }
+    .cta a.secundair { border-color: rgba(245,243,236,0.7); }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="pagina">
+
+  <header>
+    <div class="logo"><span class="dot"><span></span></span>BRISKI</div>
+    <div class="tag">Dealerinformatie</div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Een onderscheidend product.<br><em>Een groeiende doelgroep.</em></h1>
+      <p>De BRISKI is een moderne elektrische driewiel step: wendbaar, stabiel en volledig elektrisch. Het antwoord voor iedereen die nog niet aan een scootmobiel toe is — en voor stadsbewoners en reizigers die licht elektrisch vervoer zoeken. Een uniek product in de mobiliteitsmarkt, met weinig concurrentie op de winkelvloer.</p>
+    </div>
+    <div class="foto">
+      <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3F2q2CvHTV5b7m7TgMzyzghqiWp/4a27eaad-c1b3-4063-80d9-d3f851e18bf2.png" alt="De BRISKI elektrische driewiel step in het rood">
+    </div>
+  </div>
+
+  <div class="strook">
+    <span><b>100%</b> elektrisch</span>
+    <span><b>±50 km</b> actieradius</span>
+    <span><b>max 25 km/u</b> instelbaar</span>
+    <span><b>33 kg</b> met Li-ion accu</span>
+    <span><b>3</b> kleuren</span>
+  </div>
+
+  <div class="kolommen">
+    <div>
+      <h2><span class="label">Waarom BRISKI voeren</span>Wat het uw zaak oplevert</h2>
+      <ul>
+        <li><span class="v">✓</span><span><b>Aantrekkelijke dealermarges</b><small>Op een onderscheidend product met weinig concurrentie</small></span></li>
+        <li><span class="v">✓</span><span><b>Volledige ondersteuning</b><small>Marketing, demo-ondersteuning en service vanuit de importeur</small></span></li>
+        <li><span class="v">✓</span><span><b>Direct contact met de importeur</b><small>Korte lijnen, snelle levering en persoonlijke begeleiding</small></span></li>
+        <li><span class="v">✓</span><span><b>Compact op de winkelvloer</b><small>Eén demo-model verkoopt zichzelf — proberen is hebben</small></span></li>
+      </ul>
+    </div>
+    <div>
+      <h2><span class="label">Het product</span>De BRISKI in het kort</h2>
+      <ul>
+        <li><span class="v">→</span><span>Elektrische driewiel step, zeer wendbaar en uiterst stabiel</span></li>
+        <li><span class="v">→</span><span>Max. 25 km/u, zelf instelbaar via draaibare begrenzer</span></li>
+        <li><span class="v">→</span><span>Basisgewicht 47 kg; met Li-ion accu slechts 33 kg</span></li>
+        <li><span class="v">→</span><span>Optioneel met zadel en rugleuning</span></li>
+        <li><span class="v">→</span><span>Verkrijgbaar in rood, oranje en groen</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="doelgroep">
+    <h2><span class="label">Voor wie</span>Klanten die u waarschijnlijk al binnen heeft</h2>
+    <div class="chips">
+      <span class="chip"><b>50+</b> — nog niet aan een scootmobiel toe</span>
+      <span class="chip"><b>Stadsbewoners</b> — boodschappen zonder parkeerstress</span>
+      <span class="chip"><b>Reizigers</b> — mee in auto of camper</span>
+      <span class="chip"><b>Zakelijk</b> — distributiecentra en luchthavens</span>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div>
+      <h2>Interesse? Plan een demo.</h2>
+      <p>Wij komen langs met de BRISKI, of u bezoekt ons — één ritje zegt meer dan deze pagina.</p>
+    </div>
+    <div class="knoppen">
+      <a class="primair" href="mailto:info@briski.nl?subject=Dealer%20aanvraag">Dealer worden →</a>
+      <a class="secundair" href="https://dijkvanmike-glitch.github.io/Sophieinterimmanger/briski.html">Bekijk de website</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>BRISKI — Een nieuwe beleving in beweging</span>
+    <span><a href="mailto:info@briski.nl">info@briski.nl</a> &nbsp;·&nbsp; <a href="https://dijkvanmike-glitch.github.io/Sophieinterimmanger/briski.html">briski-website</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
